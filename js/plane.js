@@ -4,28 +4,28 @@
  */
 function plane() {
 	var that = this;
-	var imagePath = "images/plane.png";
-	var width = 50;
-	var height = 22;
+	var imagePath = "images/myPlane.gif";
+	var width = 150;//size of plane
+	var height = 200;//size of plane
 	
 	// True if the plane is currently drawn from left to right
 	this.imageLeftToRight = true;
 	
 	// An object containing all of the properties needed to advance the simulation a step forward
 	this.planeDetails = {
-		rotation : 0,
-		x : 0,
-		y : 0,
-		vx : 0,
-		vy : 0,
-		thrust : false,
-		rotateAntiClockwise : false,
-		rotateClockwise : false
+		//rotation : 0,
+		x : 100,
+		y : 100
+		//vx : 0,
+		//vy : 0,
+		//thrust : false,
+		//rotateAntiClockwise : false,
+		//rotateClockwise : false
 	};
 	
 	// The position details of the plane at the previous times tep
 	this.previousDetails = {
-		rotation:0,
+		//rotation:0,
 		x : 0,
 		y : 0
 	};
@@ -34,8 +34,8 @@ function plane() {
 	this.canvas = document.createElement("canvas");
 	this.canvas.width = width;
 	this.canvas.height = height;
-	this.halfWidth = width / 2;
-	this.halfHeight = height / 2;
+	this.halfWidth = width / 2;//TODO
+	this.halfHeight = height / 2;//TODO
 	
 	var ctx = this.canvas.getContext('2d');
 	var planeImage = new Image();
@@ -44,9 +44,9 @@ function plane() {
   			// If plane is flipped, use transforms to draw it back to front
   			ctx.clearRect(0, 0, width, height);
   			ctx.save();
-  			ctx.translate(0, height / 2);
-  			ctx.scale(1, that.imageLeftToRight ? 1: -1);
-  			ctx.translate(0, -height / 2);
+  			//ctx.translate(0, height / 2);
+  			//ctx.scale(1, that.imageLeftToRight ? 1: -1);
+  			//ctx.translate(0, -height / 2);
   			ctx.drawImage(planeImage, 0, 0);
   			ctx.restore();
   		}
@@ -58,7 +58,7 @@ function plane() {
   	planeImage.src = imagePath;
 }
 
-plane.prototype.step = function(dt) {
+/*plane.prototype.step = function(dt) {
 	// Relative strengths of forces
 	var friction = 0.2;
 	var thrust = this.planeDetails.thrust ? 300 : 0;
@@ -118,6 +118,4 @@ plane.prototype.step = function(dt) {
 		this.imageLeftToRight = cos > 0;
 		this.drawPlane();
 	}
-	
-
-};
+};*/

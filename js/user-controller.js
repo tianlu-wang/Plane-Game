@@ -3,11 +3,11 @@
  * via user input
  */
 function userController(plane) {
-	var up = 38;
+	//var up = 38;
 	var left = 37;
 	var right = 39
 	
-	var preventPropagationKeys = [up, left, right];
+	var preventPropagationKeys = [left, right];
 	
 	var heldDownKeys = {};
 	

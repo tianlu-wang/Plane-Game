@@ -17,10 +17,10 @@ function gameMap() {
 		ctx.rect(0, 0, that.width, that.height);
 	    // Create green -> blue gradient
 	    var gradient = ctx.createLinearGradient(0, 0, 0, that.height);
-	    gradient.addColorStop(0, '#8ED6FF');
-	    gradient.addColorStop(0.95, '#004CB3');
-	    gradient.addColorStop(0.95, '#00aa00');
-	    gradient.addColorStop(1, '#007700');
+	    gradient.addColorStop(0, '#8ED6FF');//light blue
+	    gradient.addColorStop(1, '#004CB3');//dark blue
+	    //gradient.addColorStop(0.95, '#00aa00');//light green
+	    //gradient.addColorStop(1, '#007700');//dark green
 	    ctx.fillStyle = gradient;
 	    ctx.fill();
 
@@ -28,7 +28,7 @@ function gameMap() {
 		ctx.fillStyle = "#ffffff";
 		ctx.globalAlpha = 0.03;
 		for(var i=0;i<200;i++) {
-			var cloudYPosition = Math.random() * that.height - 500;
+			var cloudYPosition = Math.random() * that.height;
 			var cloudXPosition = Math.random() * that.width;
 			
 			// For each random point, draw some white circles around it to create clouds
