@@ -140,7 +140,5 @@ function game(container, name) {
 
 		existingPlane.planeDetails = planeDetails;
 	}
-	
 	gameLoop(this);
-
 }
